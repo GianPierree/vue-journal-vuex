@@ -23,7 +23,8 @@ export const loadEntries = async ({ commit }) => {
 export const updateEntry = async ({commit}, entry) => {
     const data = {
         "date": entry.date,
-        "text": entry.text
+        "text": entry.text,
+        "picture": entry.picture
     }
 
     const response = await journalApi.put(`/entries/${entry.id}.json`, data)
@@ -35,7 +36,8 @@ export const updateEntry = async ({commit}, entry) => {
 export const createEntry = async ({commit}, entry) => {
     const data = {
         "date": entry.date,
-        "text": entry.text
+        "text": entry.text,
+        "picture": entry.picture
     }
 
     const response = await journalApi.post("/entries.json", data)
